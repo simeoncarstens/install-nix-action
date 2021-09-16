@@ -35,7 +35,7 @@ if [[ $OSTYPE =~ darwin || -e /run/systemd/system ]]; then
 else
   # "fix" the following error when running nix*
   # error: the group 'nixbld' specified in 'build-users-group' does not exist
-  mkdir -m 0755 /etc/nix
+  mkdir -m 0755 /etc/nix || echo "/etc/nix already exists"
   echo "build-users-group =" > /etc/nix/nix.conf
 fi
 
