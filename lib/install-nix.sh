@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -eo pipefail
 
 if type -p nix &>/dev/null ; then
   echo "Aborting: Nix is already installed at $(type -p nix)"
